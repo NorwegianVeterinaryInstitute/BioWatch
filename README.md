@@ -59,12 +59,12 @@ your question, run it with your own agent, save the result into
 
 ## Issues
 
-- **Colleague-facing issues**: [NorwegianVeterinaryInstitute/BioWatch](https://github.com/NorwegianVeterinaryInstitute/BioWatch) —
-  the canonical, shared repo. Colleagues file issues there.
-- **Eve's own fork** ([evezeyl/BioWatch](https://github.com/evezeyl/BioWatch)) keeps a
-  separate issues list for personal notes/backlog. GitHub does not sync issues
-  between a fork and its upstream — this is by design, not a gap to fix. Anything
-  that should reach colleagues gets filed (or re-filed) on the NVI repo directly.
+All issues live on the canonical repo,
+[NorwegianVeterinaryInstitute/BioWatch](https://github.com/NorwegianVeterinaryInstitute/BioWatch/issues) —
+that's the single backlog for everyone, Eve included. Issues are disabled on Eve's
+fork ([evezeyl/BioWatch](https://github.com/evezeyl/BioWatch)) to keep it that way:
+GitHub doesn't sync issues between a fork and its upstream, so having two trackers
+open would just split the backlog.
 
 ## License
 

@@ -12,9 +12,10 @@ Every commit follows [Conventional Commits 1.0.0](https://www.conventionalcommit
   (what's wrong, what it should do instead).
 - Fixing it → reference the issue in the commit/PR (e.g. `Fixes #12`) and close it
   once merged.
-- **Colleague-facing issues go on the NVI repo**
-  ([NorwegianVeterinaryInstitute/BioWatch](https://github.com/NorwegianVeterinaryInstitute/BioWatch)).
-  Eve's own fork issues are personal notes, not synced (see `README.md`).
+- **All issues go on the NVI repo**
+  ([NorwegianVeterinaryInstitute/BioWatch](https://github.com/NorwegianVeterinaryInstitute/BioWatch)) —
+  the single backlog, including for Eve. Issues are disabled on Eve's fork, so there
+  is no second tracker to keep in sync (see `README.md`).
 
 ## Naming convention for findings — enforced in AGENT_INSTRUCTIONS.md
 
