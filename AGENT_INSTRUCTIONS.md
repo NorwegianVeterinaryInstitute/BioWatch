@@ -118,9 +118,16 @@ told to keep some of these areas in scope too.
 ## Quality & usability filters (mandatory for Section A)
 
 - Must have a `README.md` and a clear `LICENSE`.
-- Check the repository's Issues tab — label `[EXPERIMENTAL]` if many unresolved
-  "invalid results"/bug reports with no developer response.
-- Active development: code activity within the last 12 months.
+- **Active development *and* active maintenance — both matter, check both:**
+  - Development: code activity (commits/releases) within the last 12 months.
+  - Maintenance: check the repository's Issues tab for whether the maintainer
+    actually responds — answers questions, engages with bug reports — not just
+    whether commits keep happening. A repo can have recent commits from the
+    maintainer's own use and still leave every user question unanswered; that's
+    not the same as being actively maintained for outside users.
+  - Label `[EXPERIMENTAL]` if there are many unresolved "invalid results"/bug
+    reports with no developer response, *or* if there's commit activity but
+    issues/questions sit unanswered for months — either pattern counts.
 - Prioritize Python, R, Nextflow, Snakemake, Docker/Singularity.
 - Web-servers: Section A only with a strict, open usage and data-confidentiality
   policy; otherwise Section B.
@@ -147,7 +154,12 @@ been covered.
 
 - **Within this report**: never list the same tool/entry twice, even if it matches
   more than one focus area — put it where it fits best, and mention the secondary
-  relevance in the Use Case line instead of adding a second entry.
+  relevance in the Use Case line instead of adding a second entry. This includes the
+  case where the same underlying tool turns up under two different dates (e.g. a
+  bioRxiv preprint date and a separate GitHub release date, or a later journal
+  publication date) — that's one finding, not two. **Use the earliest confirmed
+  date** (usually the preprint) to decide whether it belongs in this window at all;
+  don't let a later date make something look newer than it is.
 - **Across cycles** (the more important check for a biweekly scout): before
   finalizing, use `Glob` to list `automated_findings/*.md`, and `Read` the **2-3
   most recent** prior reports (by filename date, not all of them — this is a bounded
@@ -157,6 +169,13 @@ been covered.
   if you do include it again, say so explicitly in the Usability Note (e.g. "first
   covered in [[20261026]] — this entry is for v2.0, not a repeat listing"). If
   nothing has materially changed, leave it out rather than re-reporting it.
+- **Exception worth flagging, not a full re-entry**: if a tool already covered as a
+  preprint gets formally peer-reviewed and published in this window, that transition
+  is useful to know. Don't edit the old report (reports are generated content, see
+  `.claude/RULES.md`) and don't give it a new Section A/B entry or Summary Table
+  row either — add a short one-line note in *this* report instead, e.g. under a
+  small "📰 Preprint → Published this cycle" note: "[[Tool Name]] (preprint covered
+  in [[20261026]]) is now peer-reviewed in *Bioinformatics*."
 - For a `specialized` run, this check is lower priority — narrower topics overlap
   less with recent automated runs — but still worth a quick glance if the topic is
   close to something covered recently.
@@ -193,13 +212,17 @@ Links: [GitHub/source URL] | [Article/Preprint URL]
 Function: 2-sentence summary of the method and tech stack.
 Use Case: the specific analytical problem it solves.
 Usability Note: e.g. "Container available", "Conda recipe", "Experimental — many
-open bugs", "12-month issue check: passed/stale".
+open bugs", "Active + maintained: commits and maintainer responses within 12
+months", "Commits recent but issues unanswered 6+ months — maintenance concern".
 Tags: #tag1 #tag2 #tag3
 
 💡 Methodological Trend (include whenever focus area 10 — emerging & cross-domain
 methods — turned up something worth naming, not only when it's dramatic; this is
 where ML/DL, structural/functional biology, or unconventional approaches
 transferable to veterinary science get surfaced, even from a single tool)
+
+📰 Preprint → Published This Cycle (include only if applicable — see "Avoiding
+duplicates" above; one short line per tool, not a full entry)
 
 ℹ️ Section B: Informational & Proprietary
 
