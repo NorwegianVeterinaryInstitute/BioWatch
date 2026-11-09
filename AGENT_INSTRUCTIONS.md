@@ -106,12 +106,15 @@ told to keep some of these areas in scope too.
 ## Tagging each entry
 
 Every entry in Section A and B gets its own `Tags:` line — **2-3 tags, never more
-than 5** — chosen only from `TAG_VOCABULARY.md` (same directory as this file). Do
-not invent new tags inline: if nothing in that file fits, say so in the entry rather
-than making one up, and it can be added to the vocabulary deliberately later. Write
-them as plain inline hashtags, space-separated, e.g. `Tags: #amr #nextflow
-#surveillance-ready`. These are separate from (and usually more specific than) the
-report-level `theme_query`/`tags` in the frontmatter.
+than 5** — chosen only from `TAG_VOCABULARY.md` (same directory as this file). If
+it wasn't included in this prompt alongside these instructions, **read it now**
+before tagging anything — don't guess or invent plausible-sounding tags from
+memory; that's exactly the drift a fixed vocabulary exists to prevent. If nothing
+in it fits, say so in the entry rather than making one up, and it can be added to
+the vocabulary deliberately later. Write tags as plain inline hashtags,
+space-separated, exactly as spelled in the vocabulary (case included), e.g.
+`Tags: #amr #nextflow #surveillance-ready`. These are separate from (and usually
+more specific than) the report-level `theme_query`/`tags` in the frontmatter.
 
 ## Sorting
 

@@ -20,6 +20,7 @@ REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 OUTPUT_DIR="$REPO_DIR/automated_findings"
 CHECKLIST="$REPO_DIR/REVIEW_CHECKLIST.md"
 INSTRUCTIONS="$REPO_DIR/AGENT_INSTRUCTIONS.md"
+VOCABULARY="$REPO_DIR/TAG_VOCABULARY.md"
 LAST_RUN_FILE="$HOME/.local/share/biowatch_last_run"
 LOG_DIR="$HOME/logs/biowatch"
 CLAUDE="$HOME/.local/bin/claude"
@@ -48,11 +49,16 @@ run_one_cycle() {
 
     prompt="$(cat "$INSTRUCTIONS")
 
+$(cat "$VOCABULARY")
+
 ## This run
 - run_type: automated
 - period_from: $period_from
 - period_to: $period_to
 - output_file: $output_file
+
+The tag vocabulary above is pasted in full — pick entry tags from it directly,
+there is no separate file to go read for this.
 
 Search thoroughly, then write the file to the exact output_file path above."
 

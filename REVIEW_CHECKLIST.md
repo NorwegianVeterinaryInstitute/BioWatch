@@ -24,3 +24,4 @@ GROUP BY report
 ## 2026
 
 *(fresh start — no backlog carried over from the old prototype repo)*
+- [ ] [[20261109]] — 2026-10-26 -> 2026-11-09

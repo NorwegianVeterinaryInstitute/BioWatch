@@ -5,10 +5,16 @@ then add a short block on top narrowing what this particular run is about. Every
 else (quality filters, output format, frontmatter fields) stays the same, so the
 result is still searchable alongside every other report.
 
+Paste `TAG_VOCABULARY.md` in too, not just a reference to it — an agent asked to tag
+entries "from TAG_VOCABULARY.md" without the file actually in front of it tends to
+invent plausible-sounding tags instead of going to look it up.
+
 ## Template
 
 ```
-<paste the full contents of AGENT_INSTRUCTIONS.md (or upload instructions) here>
+<paste the full contents of AGENT_INSTRUCTIONS.md here>
+
+<paste the full contents of TAG_VOCABULARY.md here>
 
 ## This run — complementary instructions
 - Narrow focus: <what you actually want this time>
