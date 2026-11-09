@@ -1,0 +1,11 @@
+# Obsidian: keep the plugin manifest, never the plugin binaries or local workspace state
+.obsidian/plugins/*
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Obsidian export/attachment formats we don't track
+*.hml
+*.xlsx
+
+# OS / editor noise
+.DS_Store

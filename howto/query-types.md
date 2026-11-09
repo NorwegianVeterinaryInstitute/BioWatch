@@ -1,0 +1,23 @@
+# Query types
+
+## standard_queries/
+
+The regular, biweekly scout run. Always the same focus areas (see
+`AGENT_INSTRUCTIONS.md`), run by `bin/run_biowatch.sh` on a schedule. Filename is the
+period's end date, `YYYYMMDD.md` — sorts correctly on its own.
+
+## specialized_queries/
+
+A one-off, narrower run on something a standard run wouldn't catch well — e.g. "only
+long-read assembly tools" or "anything new on H5N1 specifically." Anyone (Eve or a
+colleague) can run one with their own agent:
+
+1. Take `AGENT_INSTRUCTIONS.md` as the base prompt.
+2. Narrow the focus areas / add the specific question.
+3. Ask the agent to write the result into `specialized_queries/` with the same report
+   format and frontmatter fields (period_from/period_to/tags/read matter for Dataview
+   — don't drop them).
+4. Give the file a descriptive name, e.g. `2026-11-23_h5n1_methods.md`.
+
+Both folders use the same frontmatter schema, so the Dataview queries in
+`templates/` search across both at once.
