@@ -76,6 +76,13 @@ told to keep some of these areas in scope too.
 8. **Variant Analysis & Typing** — SNP-based methods, wgMLST/cgMLST, variant calling.
 9. **Food security & One Health** — zoonotic pathogen surveillance, AMR tracking,
    cross-species transmission, source attribution.
+10. **Emerging & cross-domain methods** — a deliberate catch-all, not just the 9
+    areas above: machine learning / deep learning approaches, structural and
+    functional biology techniques, or any unconventional method from outside
+    bioinformatics proper that could plausibly transfer to veterinary pathogen/AMR/
+    genomics work, even if it doesn't fit neatly into focus areas 1-9 yet. This is
+    how something genuinely new or upcoming gets caught before it has an
+    established category — don't skip it just because nothing obvious turns up.
 
 ## Quality & usability filters (mandatory for Section A)
 
@@ -88,6 +95,16 @@ told to keep some of these areas in scope too.
   policy; otherwise Section B.
 - Tag `[SURVEILLANCE-READY]` if applied to EU (ECDC/EFSA) or Norwegian priority
   pathogens: H5N1, ASF, Listeria, Salmonella, Saprolegnia, CWD, ISA virus.
+
+## Tagging each entry
+
+Every entry in Section A and B gets its own `Tags:` line — **2-3 tags, never more
+than 5** — chosen only from `TAG_VOCABULARY.md` (same directory as this file). Do
+not invent new tags inline: if nothing in that file fits, say so in the entry rather
+than making one up, and it can be added to the vocabulary deliberately later. Write
+them as plain inline hashtags, space-separated, e.g. `Tags: #amr #nextflow
+#surveillance-ready`. These are separate from (and usually more specific than) the
+report-level `theme_query`/`tags` in the frontmatter.
 
 ## Sorting
 
@@ -121,12 +138,17 @@ Links: [GitHub/source URL] | [Article/Preprint URL]
 Function: 2-sentence summary of the method and tech stack.
 Use Case: the specific analytical problem it solves.
 Usability Note: container availability, conda recipe, issue-check result.
+Tags: #tag1 #tag2 #tag3
 
-[Methodological Trend section, only if a real trend is emerging]
+💡 Methodological Trend (include whenever focus area 10 — emerging & cross-domain
+methods — turned up something worth naming, not only when it's dramatic; this is
+where ML/DL, structural/functional biology, or unconventional approaches
+transferable to veterinary science get surfaced, even from a single tool)
 
 ℹ️ Section B: Informational & Proprietary
 
 **[Tool Name]**: [URL] — brief note (proprietary / web-only / unclear data policy).
+Tags: #tag1 #tag2
 
 📊 Summary Table
 

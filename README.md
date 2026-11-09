@@ -20,6 +20,8 @@ and the group reviews/discusses them in a recurring meeting.
   topic (see `howto/agent-query-types.md`).
 - `AGENT_INSTRUCTIONS.md` — the prompt behind every report. Self-contained; point
   your own agent at it to run a query.
+- `TAG_VOCABULARY.md` — the fixed tag list each report entry is tagged from (2-3,
+  max 5 per entry), so tags stay mergeable instead of drifting into near-duplicates.
 - `in_vault_queries/` — Dataview queries for browsing/searching reports.
 - `REVIEW_CHECKLIST.md` — track what's been read/discussed.
 - `bin/run_biowatch.sh` — the scheduled-run script (currently Eve's machine; see the

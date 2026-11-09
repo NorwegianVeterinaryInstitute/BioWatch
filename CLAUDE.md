@@ -28,15 +28,18 @@ screen them together instead of each person trying to keep up alone.
 - `AGENT_INSTRUCTIONS.md` — the canonical scout prompt. This is the single source of
   truth for what the agent searches and how it formats output; update it here, not in
   a copy elsewhere.
+- `TAG_VOCABULARY.md` — the fixed list of per-entry tags the agent picks from;
+  update this before using a new tag, don't invent one inline.
 - `bin/run_biowatch.sh` — the script a scheduler (cron/systemd) calls.
 
 ## Report format
 
 Each report is a Markdown file with YAML frontmatter (`run_type`, `description`,
 `period_from`, `period_to`, `date_search`, `theme_query`, `tags`, `read: false`).
-The frontmatter exists
-specifically so the Dataview plugin can query/filter/sort reports as a database —
-don't drop or rename these fields without updating `in_vault_queries/*.md` to match.
+The frontmatter exists specifically so the Dataview plugin can query/filter/sort
+reports as a database — don't drop or rename these fields without updating
+`in_vault_queries/*.md` to match. Each entry within a report also carries its own
+`Tags:` line (2-3, max 5, from `TAG_VOCABULARY.md`) — see `AGENT_INSTRUCTIONS.md`.
 
 ## Conventions
 
