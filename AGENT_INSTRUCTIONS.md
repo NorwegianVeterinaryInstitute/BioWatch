@@ -136,16 +136,23 @@ told to keep some of these areas in scope too.
 
 ## Tagging each entry
 
-Every entry in Section A and B gets its own `Tags:` line — **2-3 tags, never more
-than 5** — chosen only from `TAG_VOCABULARY.md` (same directory as this file). If
-it wasn't included in this prompt alongside these instructions, **read it now**
-before tagging anything — don't guess or invent plausible-sounding tags from
-memory; that's exactly the drift a fixed vocabulary exists to prevent. If nothing
-in it fits, say so in the entry rather than making one up, and it can be added to
-the vocabulary deliberately later. Write tags as plain inline hashtags,
-space-separated, exactly as spelled in the vocabulary (case included), e.g.
-`Tags: #amr #nextflow #surveillance-ready`. These are separate from (and usually
-more specific than) the report-level `theme_query`/`tags` in the frontmatter.
+Every entry in Section A and B is a **list item** (`- **[Tool Name]** ... #tag1
+#tag2`), with its tags placed **at the end of that same bullet line** — not on a
+separate line, not on a child line. This matters mechanically: Obsidian/Dataview
+reads a list item's tags from that item's own line, so a tag on a child bullet
+(Links/Function/etc.) would not be picked up as the entry's tag. Put the whole
+entry (name, date, flags, tags) on one line; Links/Function/Use Case/Usability
+Note go on indented child bullets underneath.
+
+**2-3 tags per entry, never more than 5** — chosen only from `TAG_VOCABULARY.md`
+(same directory as this file). If it wasn't included in this prompt alongside
+these instructions, **read it now** before tagging anything — don't guess or
+invent plausible-sounding tags from memory; that's exactly the drift a fixed
+vocabulary exists to prevent. If nothing in it fits, say so in the entry rather
+than making one up, and it can be added to the vocabulary deliberately later.
+Write tags exactly as spelled in the vocabulary (case included), e.g. `#amr
+#nextflow #surveillance-ready`. These are separate from (and usually more
+specific than) the report-level `theme_query`/`tags` in the frontmatter.
 
 ## Avoiding duplicates
 
@@ -207,14 +214,14 @@ read: false
 
 🚀 Section A: Command-Line & Secure Analytical Tools (Newest First)
 
-**[Tool Name]** (Release Date: YYYY-MM-DD) [SURVEILLANCE-READY if applicable] [EXPERIMENTAL if applicable]
-Links: [GitHub/source URL] | [Article/Preprint URL]
-Function: 2-sentence summary of the method and tech stack.
-Use Case: the specific analytical problem it solves.
-Usability Note: e.g. "Container available", "Conda recipe", "Experimental — many
-open bugs", "Active + maintained: commits and maintainer responses within 12
-months", "Commits recent but issues unanswered 6+ months — maintenance concern".
-Tags: #tag1 #tag2 #tag3
+- **[Tool Name]** (Release Date: YYYY-MM-DD) [SURVEILLANCE-READY if applicable] [EXPERIMENTAL if applicable] #tag1 #tag2 #tag3
+    - Links: [GitHub/source URL] | [Article/Preprint URL]
+    - Function: 2-sentence summary of the method and tech stack.
+    - Use Case: the specific analytical problem it solves.
+    - Usability Note: e.g. "Container available", "Conda recipe", "Experimental —
+      many open bugs", "Active + maintained: commits and maintainer responses
+      within 12 months", "Commits recent but issues unanswered 6+ months —
+      maintenance concern".
 
 💡 Methodological Trend (include whenever focus area 10 — emerging & cross-domain
 methods — turned up something worth naming, not only when it's dramatic; this is
@@ -226,11 +233,10 @@ duplicates" above; one short line per tool, not a full entry)
 
 ℹ️ Section B: Informational & Proprietary
 
-**[Tool Name]** ([URL]) — [proprietary / web-only / unclear data policy]
-Function: 1-2 sentence summary of what it does and why it's relevant — same as
-Section A's Function line, just shorter. Don't skip this: a reader shouldn't have
-to open the link to know whether it's worth opening.
-Tags: #tag1 #tag2
+- **[Tool Name]** ([URL]) — [proprietary / web-only / unclear data policy] #tag1 #tag2
+    - Function: 1-2 sentence summary of what it does and why it's relevant — same
+      as Section A's Function line, just shorter. Don't skip this: a reader
+      shouldn't have to open the link to know whether it's worth opening.
 
 📊 Summary Table
 

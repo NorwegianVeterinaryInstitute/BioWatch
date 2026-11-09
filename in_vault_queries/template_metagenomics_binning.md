@@ -1,41 +1,49 @@
-# Metagenomics binning — worked theme-query example
+# Metagenomics binning — worked theme-query example (entry-level)
 
-Shows how to go from a broad vocabulary tag to a specific sub-topic. `binning`
-isn't (and doesn't need to be) its own entry in `TAG_VOCABULARY.md` — it's narrow
-enough to find with a text search layered on top of the `#metagenomics` tag
-instead. Use this as a template for any other theme the same way.
+Each report entry is now its own Dataview list item, with its tags on that same
+bullet line (see `AGENT_INSTRUCTIONS.md`) — so a query can return the specific
+finding, not the whole report file (see issue #8). This query filters at that
+entry level: only list items that actually carry a tag count as "findings"
+(child bullets like Links/Function never carry tags), so `item.tags.length > 0`
+cleanly isolates them.
 
-## 1. Every entry tagged #metagenomics
+`binning` isn't (and doesn't need to be) its own entry in `TAG_VOCABULARY.md` —
+narrow enough to find with a text search layered on top of the `#metagenomics`
+tag instead. Use this as a template for any other theme the same way.
 
-> Base query: any report containing the #metagenomics tag anywhere, newest first.
+> **Note**: this uses `dataviewjs`, not the simpler declarative `dataview` blocks
+> used elsewhere in this vault — entry-level filtering needs it. Written against
+> Dataview's documented list-item API, but not yet confirmed rendering correctly
+> in a live vault — if it errors or looks wrong once reports exist, say so and
+> we'll fix the query, not the data.
 
-```dataview
-TABLE
-    dateformat(period_to, "yyyy-MM-dd") as "Date",
-    theme_query as "Focus",
-    tags as "Tags"
-FROM #metagenomics
-SORT period_to DESC
-```
+```dataviewjs
+const tag = "metagenomics";     // without '#' — any TAG_VOCABULARY.md tag
+const keyword = "binning";      // set to null to skip the text refinement
 
-## 2. Narrowed to binning specifically
+let rows = [];
+for (let page of dv.pages('"automated_findings" or "specialized_findings"')) {
+    for (let item of page.file.lists) {
+        if (!item.tags || item.tags.length === 0) continue; // only tagged entries
+        if (!item.tags.some(t => t.toLowerCase() === "#" + tag)) continue;
 
-> Same tag, refined with a text search for "binning" in the note body — the
-> combination is what makes this a *binning* query rather than a general
-> metagenomics one.
+        let funcChild = item.children.find(c => c.text.startsWith("Function:"));
+        let funcText = funcChild ? funcChild.text.replace(/^Function:\s*/, "") : "";
+        let haystack = (item.text + " " + funcText).toLowerCase();
+        if (keyword && !haystack.includes(keyword.toLowerCase())) continue;
 
-```dataview
-TABLE
-    dateformat(period_to, "yyyy-MM-dd") as "Date",
-    theme_query as "Focus"
-FROM #metagenomics
-WHERE contains(lower(file.content), "binning")
-SORT period_to DESC
+        rows.push([item.link, funcText, page.file.link, page.period_to]);
+    }
+}
+rows.sort((a, b) => (a[3] < b[3] ? 1 : a[3] > b[3] ? -1 : 0));
+dv.table(["Finding", "Function", "Report", "Date"], rows);
 ```
 
 ## Building your own theme query
 
-Copy query #2, swap `#metagenomics` for any tag in `TAG_VOCABULARY.md`, and swap
-`"binning"` for whatever word narrows it down further (a method name, "wastewater",
-a pathogen name, etc.). That's the whole pattern: **vocabulary tag + free-text
-refinement** — no need to formalize every sub-topic as its own tag.
+Copy the block above, swap `tag` for any `TAG_VOCABULARY.md` entry, and swap
+`keyword` for whatever narrows it down further (a method name, "wastewater", a
+pathogen name) — or set `keyword = null` to drop the text refinement entirely and
+just list every entry with that tag. That's the whole pattern: **vocabulary tag +
+optional free-text refinement, at the finding level, with a link back to its
+report**.

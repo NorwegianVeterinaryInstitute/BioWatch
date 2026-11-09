@@ -31,10 +31,6 @@ GROUP BY report
 
 ## 2026
 
-*(fresh start — no backlog carried over from the old prototype repo)*
-- [ ] [[20261109]] — 2026-10-26 -> 2026-11-09
-- [ ] [[20251207]] — 2025-11-23 -> 2025-12-07
-- [ ] [[20251221]] — 2025-12-07 -> 2025-12-21
-- [ ] [[20260104]] — 2025-12-21 -> 2026-01-04
-- [ ] [[20260118]] — 2026-01-04 -> 2026-01-18
-- [ ] [[20260201]] — 2026-01-18 -> 2026-02-01
+*(fresh start — no backlog carried over from the old prototype repo; the first
+batch of reports was also regenerated from scratch on 2026-11-09 to switch to the
+list-item entry format Dataview needs for per-finding queries)*
