@@ -66,6 +66,10 @@ SORT period_to DESC
 Copy a block from `in_vault_queries/`, change the folder/tag/sort, and it's a new
 search — no code needed beyond editing that one line.
 
+For a worked example of building your own theme-specific search — a vocabulary tag
+combined with a free-text refinement for a narrower sub-topic — see
+`in_vault_queries/template_metagenomics_binning.md`.
+
 ## Browsing tags in Obsidian itself
 
 Beyond Dataview, Obsidian's built-in **Tag pane** (sidebar) lists every tag used
