@@ -5,8 +5,9 @@ updated: 2026-11-09
 
 # BioWatch — Review Checklist
 
-Reports are generated every 2 weeks by `bin/run_biowatch.sh`.
-Check off each report once the group has read/discussed it.
+Automated reports land here every 2 weeks (`bin/run_biowatch.sh`); specialized ones
+get added by whoever runs them (see `AGENT_INSTRUCTIONS.md`). Check off each report
+once the group has read/discussed it.
 
 ---
 

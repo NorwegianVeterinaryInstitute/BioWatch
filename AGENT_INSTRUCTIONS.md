@@ -149,3 +149,16 @@ tools found. Ask to expand."
 
 Search thoroughly before writing. Do not fabricate release dates, links, or licenses
 — if a detail can't be confirmed, say so in the Usability Note rather than guessing.
+
+## After writing the report
+
+Append one line to `REVIEW_CHECKLIST.md` (same directory as this file), as the last
+line, so the report gets tracked for review regardless of run type:
+
+```
+- [ ] [[<output filename, without the .md extension>]] — <period_from> -> <period_to>
+```
+
+Do this for every run, automated or specialized — a specialized run started by a
+colleague with their own agent still needs a checklist row; nothing else does it for
+them.

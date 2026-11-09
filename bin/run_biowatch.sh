@@ -87,9 +87,14 @@ fi
 
 ts "Scout complete: $OUTPUT_FILE"
 
-# Append an unchecked row to the review checklist
-printf -- '- [ ] [[%s]] — %s -> %s\n' "${FILENAME%.md}" "$PERIOD_FROM" "$PERIOD_TO" >> "$CHECKLIST"
-ts "Appended checklist row for $FILENAME"
+# AGENT_INSTRUCTIONS.md tells the agent to append its own checklist row — this is
+# only a fallback in case it didn't, so runs never silently drop off the checklist.
+if ! grep -qF "[[${FILENAME%.md}]]" "$CHECKLIST"; then
+    printf -- '- [ ] [[%s]] — %s -> %s\n' "${FILENAME%.md}" "$PERIOD_FROM" "$PERIOD_TO" >> "$CHECKLIST"
+    ts "Agent didn't add a checklist row — added one (fallback)"
+else
+    ts "Checklist row already present for $FILENAME"
+fi
 
 if [[ -z "${BIOWATCH_FROM:-}" ]]; then
     echo "$PERIOD_TO" > "$LAST_RUN_FILE"
