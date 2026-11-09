@@ -10,6 +10,5 @@
 # OS / editor noise
 .DS_Store
 
-# Personal Claude Code config/tools — kept on the eve-local-config branch only,
-# never on main, so colleagues' clones stay unaffected.
+# Local Claude Code settings — never shared via this repo
 .claude/
