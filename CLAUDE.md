@@ -20,7 +20,7 @@ screen them together instead of each person trying to keep up alone.
   (the run's end date), sorts correctly by filename.
 - `specialized_findings/` — ad hoc runs, by Eve or colleagues, on a narrower topic.
   Same report format, free-form filename.
-- `Queries/` — Dataview queries for browsing/searching reports by tag, date, or
+- `in_vault_queries/` — Dataview queries for browsing/searching reports by tag, date, or
   coverage gap.
 - `REVIEW_CHECKLIST.md` — one row per report; check it off once read. Updated
   automatically by `bin/run_biowatch.sh` after each run.
@@ -35,7 +35,7 @@ screen them together instead of each person trying to keep up alone.
 Each report is a Markdown file with YAML frontmatter (`period_from`, `period_to`,
 `date_search`, `theme_query`, `tags`, `read: false`). The frontmatter exists
 specifically so the Dataview plugin can query/filter/sort reports as a database —
-don't drop or rename these fields without updating `Queries/*.md` to match.
+don't drop or rename these fields without updating `in_vault_queries/*.md` to match.
 
 ## Conventions
 

@@ -17,10 +17,10 @@ and the group reviews/discusses them in a recurring meeting.
 
 - `automated_findings/` — the regular biweekly reports, one file per cycle.
 - `specialized_findings/` — one-off, narrower runs anyone can request on their own
-  topic (see `howto/query-types.md`).
+  topic (see `howto/agent-query-types.md`).
 - `AGENT_INSTRUCTIONS.md` — the prompt behind every report. Self-contained; point
   your own agent at it to run a query.
-- `Queries/` — Dataview queries for browsing/searching reports.
+- `in_vault_queries/` — Dataview queries for browsing/searching reports.
 - `REVIEW_CHECKLIST.md` — track what's been read/discussed.
 - `TASKS.md` — project task list.
 - `bin/run_biowatch.sh` — the scheduled-run script (Eve's machine; see `TASKS.md`
@@ -44,12 +44,12 @@ and the group reviews/discusses them in a recurring meeting.
 
    Plugin binaries aren't committed to this repo — install them fresh, works the
    same on any OS.
-4. Browse `Queries/` for ready-made searches, or write your own Dataview query
+4. Browse `in_vault_queries/` for ready-made searches, or write your own Dataview query
    against `automated_findings/`/`specialized_findings/`.
 
 ## Contributing a specialized query
 
-See `howto/query-types.md`. Short version: take `AGENT_INSTRUCTIONS.md`, narrow it to
+See `howto/agent-query-types.md`. Short version: take `AGENT_INSTRUCTIONS.md`, narrow it to
 your question, run it with your own agent, save the result into
 `specialized_findings/` with the same frontmatter fields so it's still searchable.
 

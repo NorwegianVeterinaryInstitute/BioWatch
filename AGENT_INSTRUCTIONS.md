@@ -100,7 +100,7 @@ Usability Note: container availability, conda recipe, issue-check result.
 ```
 
 The `tags`, `period_from`, `period_to`, `date_search` and `read` frontmatter fields
-are load-bearing — they're what the Obsidian Dataview queries in `Queries/` use to
+are load-bearing — they're what the Obsidian Dataview queries in `in_vault_queries/` use to
 build the searchable index. Keep them even if you adapt the prompt.
 
 If more than 20 qualifying results exist, add a closing note: "Note: [X] additional

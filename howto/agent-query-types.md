@@ -1,4 +1,7 @@
-# Query types
+# Agent query types
+
+The two kinds of query you can ask the scout *agent* to run — not to be confused with
+`in_vault_queries/`, which searches reports already in the vault.
 
 ## automated_findings/
 
@@ -23,4 +26,4 @@ See `howto/specialized-query-example.md` for a worked example — you only write
 narrowing instructions, not a new prompt from scratch.
 
 Both folders use the same frontmatter schema, so the Dataview queries in
-`Queries/` search across both at once.
+`in_vault_queries/` search across both at once.

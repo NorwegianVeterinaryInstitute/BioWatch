@@ -8,7 +8,7 @@ result is still searchable alongside every other report.
 ## Template
 
 ```
-<paste the full contents of AGENT_INSTRUCTIONS.md here>
+<paste the full contents of AGENT_INSTRUCTIONS.md (or upload instructions) here>
 
 ## This run — complementary instructions
 - Narrow focus: <what you actually want this time>
@@ -35,5 +35,5 @@ everything else in the base prompt still applies (filters, Section A/B split, ta
 ```
 
 That's the whole adaptation — three lines plus a filename. The agent still applies
-the shared quality bar and writes the same report shape, so `Queries/` keeps
+the shared quality bar and writes the same report shape, so `in_vault_queries/` keeps
 finding it.
