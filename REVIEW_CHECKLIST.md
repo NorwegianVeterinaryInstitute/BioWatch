@@ -34,3 +34,4 @@ GROUP BY report
 *(fresh start — no backlog carried over from the old prototype repo; the first
 batch of reports was also regenerated from scratch on 2026-11-09 to switch to the
 list-item entry format Dataview needs for per-finding queries)*
+- [ ] [[20261109]] — 2026-10-26 -> 2026-11-09
