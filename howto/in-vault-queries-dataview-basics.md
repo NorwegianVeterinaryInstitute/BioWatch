@@ -75,3 +75,8 @@ query at all. It won't stop someone from typing a new tag that isn't in the
 vocabulary, though — Obsidian has no built-in "pick from this list only" — so the
 vocabulary file plus the agent instruction are what actually keep tags controlled,
 not an Obsidian setting.
+
+That restriction is deliberately only for the *agent's* entry tags. During review
+(`REVIEW_CHECKLIST.md`), add your own ad hoc tags freely — the Tag pane picks up
+anything, vocabulary or not, so it's a fine way to build up a browsable index of
+your own (meeting themes, "revisit-next-cycle", etc.) without pre-planning it.

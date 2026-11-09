@@ -9,6 +9,14 @@ Automated reports land here every 2 weeks (`bin/run_biowatch.sh`); specialized o
 get added by whoever runs them (see `AGENT_INSTRUCTIONS.md`). Check off each report
 once the group has read/discussed it.
 
+**Tagging during review**: `TAG_VOCABULARY.md` is a fixed list for the *agent's*
+per-entry tags, so automated tagging stays mergeable. It doesn't limit you — add
+your own `#hashtag` here on a checklist row, or in a note, whenever it's useful
+during discussion (a meeting theme, a colleague's name, "revisit-next-cycle",
+whatever). Obsidian's Tag pane picks up every tag in the vault regardless of
+whether it's in the vocabulary, so this is a good, low-friction way to build up
+your own browsable index over time without having to formalize it first.
+
 ---
 
 ## Coverage gap check
