@@ -14,7 +14,7 @@ Check off each report once the group has read/discussed it.
 
 ```dataview
 LIST "Last coverage ended on: " + max(rows.period_to)
-FROM "standard_queries"
+FROM "automated_findings"
 GROUP BY report
 ```
 

@@ -14,7 +14,7 @@ result is still searchable alongside every other report.
 - Narrow focus: <what you actually want this time>
 - period_from: <date>
 - period_to: <date>
-- output_file: specialized_queries/<descriptive-name>.md
+- output_file: specialized_findings/<descriptive-name>.md
 ```
 
 ## Worked example
@@ -31,9 +31,9 @@ everything else in the base prompt still applies (filters, Section A/B split, ta
   areas in AGENT_INSTRUCTIONS.md for this run.
 - period_from: 2026-10-10
 - period_to: 2026-11-10
-- output_file: specialized_queries/2026-11-10_oomycete_longread_assembly.md
+- output_file: specialized_findings/2026-11-10_oomycete_longread_assembly.md
 ```
 
 That's the whole adaptation — three lines plus a filename. The agent still applies
-the shared quality bar and writes the same report shape, so `templates/` keeps
+the shared quality bar and writes the same report shape, so `Queries/` keeps
 finding it.

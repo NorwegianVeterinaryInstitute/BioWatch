@@ -71,7 +71,7 @@ date_search: <period_to>
 period_from: <period_from>
 period_to: <period_to>
 theme_query: Pathogen Discovery, pLMs, Metagenomics, Assembly, Evolution, Comparative Genomics, AMR
-full_query: "BioWatch standard query <period_from> to <period_to>"
+full_query: "BioWatch automated query <period_from> to <period_to>"
 tags: [bioinformatics, pathogen_discovery, pLMs, metagenomics, AMR]
 read: false
 ---
@@ -100,7 +100,7 @@ Usability Note: container availability, conda recipe, issue-check result.
 ```
 
 The `tags`, `period_from`, `period_to`, `date_search` and `read` frontmatter fields
-are load-bearing — they're what the Obsidian Dataview queries in `templates/` use to
+are load-bearing — they're what the Obsidian Dataview queries in `Queries/` use to
 build the searchable index. Keep them even if you adapt the prompt.
 
 If more than 20 qualifying results exist, add a closing note: "Note: [X] additional

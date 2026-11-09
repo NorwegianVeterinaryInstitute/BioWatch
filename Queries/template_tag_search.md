@@ -1,4 +1,8 @@
-> Helps find reports that contain specific tags.
+# Tag search
+
+Three ready-made Dataview queries for finding reports by tag — edit the
+`contains(...)`/`#hashtag` lines to your own combination, or copy a block into a new
+note. Also includes a hygiene check for tags that never made it into the frontmatter.
 
 ## 1. Reports by tag (YAML + inline)
 
@@ -9,7 +13,7 @@ TABLE
     dateformat(period_to, "yyyy-MM-dd") as "Date",
     theme_query as "Focus",
     tags as "Tags"
-FROM "standard_queries" OR "specialized_queries"
+FROM "automated_findings" OR "specialized_findings"
 WHERE contains(tags, "pangenome")
   AND contains(tags, "surveillance")
 SORT period_to DESC
@@ -22,7 +26,7 @@ SORT period_to DESC
 
 ```dataviewjs
 dv.table(["Report", "Inline Tags"],
-    dv.pages('"standard_queries" or "specialized_queries"')
+    dv.pages('"automated_findings" or "specialized_findings"')
     .map(p => {
         let yamlTags = Array.isArray(p.tags) ? p.tags : [p.tags];
         let inlineOnly = p.file.etags.values.filter(t => {

@@ -13,7 +13,7 @@
 set -euo pipefail
 
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-OUTPUT_DIR="$REPO_DIR/standard_queries"
+OUTPUT_DIR="$REPO_DIR/automated_findings"
 CHECKLIST="$REPO_DIR/REVIEW_CHECKLIST.md"
 INSTRUCTIONS="$REPO_DIR/AGENT_INSTRUCTIONS.md"
 LAST_RUN_FILE="$HOME/.local/share/biowatch_last_run"

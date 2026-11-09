@@ -3,7 +3,7 @@
 ## Now
 
 - [ ] Confirm biweekly cadence and re-enable the scheduled run (systemd timer,
-      pointed at this repo's `standard_queries/`)
+      pointed at this repo's `automated_findings/`)
 - [ ] Decide auto-commit vs manual commit after each scheduled run
 - [ ] Trim `.obsidian/community-plugins.json` to the plugins actually needed
 - [ ] Invite colleagues, confirm they can clone + open as an Obsidian vault

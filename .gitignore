@@ -1,7 +1,8 @@
-# Obsidian: keep the plugin manifest, never the plugin binaries or local workspace state
-.obsidian/plugins/*
-.obsidian/workspace.json
-.obsidian/workspace-mobile.json
+# Obsidian: track only the plugin manifest (the recommended-plugins list).
+# Everything else under .obsidian/ (app.json, appearance.json, core-plugins.json,
+# themes/, workspace*.json, plugin binaries) is per-person local state.
+.obsidian/*
+!.obsidian/community-plugins.json
 
 # Obsidian export/attachment formats we don't track
 *.hml
