@@ -62,20 +62,27 @@ told to keep some of these areas in scope too.
    techniques, "dark matter" analysis (viral/bacterial signal with no close relatives
    in GenBank).
 2. **Protein Language Models (pLMs)** — ProtBERT, ESM-2, etc. for functional
-   annotation, AMR phenotype prediction, structural pathogen characterization.
+   annotation, predicting AMR phenotypes **from sequence alone** (no phenotypic
+   assay), structural pathogen characterization.
 3. **Metagenomics** — advanced binning, taxonomic classification of divergent
    sequences, wastewater/environmental surveillance pipelines.
-4. **Assembly & Annotation** — difficult/complex/repetitive genomes, haplotype-aware
-   assembly, purging haplotigs for diploid/polyploid parasites (cestodes, etc.).
+4. **Assembly & Annotation** — difficult/complex/repetitive genomes (e.g.
+   oomycetes). **High priority** for haplotype-aware assembly and purging
+   haplotigs for diploid/polyploid parasites (cestodes, etc.), or for any other
+   parasite.
 5. **Evolution** — recombination, segment reassortment (viruses), horizontal gene
-   transfer, tree-to-tree comparisons, selection analysis, mobile elements
-   (transposons, spaceships).
+   transfer, tree-to-tree comparisons, selection analysis, mobile element detection
+   and characterisation (transposons, spaceships, jumping elements), evolution and
+   adaptation in general.
 6. **Phylogenetics** — tree-to-tree comparisons (Robinson-Foulds, tanglegrams),
    phylogeography, phylodynamics.
-7. **Comparative Genomics** — synteny, gene duplication, MSA, pangenome graphs.
-8. **Variant Analysis & Typing** — SNP-based methods, wgMLST/cgMLST, variant calling.
-9. **Food security & One Health** — zoonotic pathogen surveillance, AMR tracking,
-   cross-species transmission, source attribution.
+7. **Comparative Genomics** — synteny, gene duplication, MSA, pangenome graphs
+   (tube maps, graph-based variants).
+8. **Variant Analysis & Typing** — SNP-based methods, core/whole-genome MLST
+   (wgMLST/cgMLST), variant calling.
+9. **Food security & One Health** — zoonotic pathogen surveillance, antimicrobial
+   tracking (**AMR, and biocide/detergent-cleaning-agent resistance** — not
+   antibiotics only), cross-species transmission, source attribution.
 10. **Emerging & cross-domain methods** — a deliberate catch-all, not just the 9
     areas above: machine learning / deep learning approaches, structural and
     functional biology techniques, or any unconventional method from outside
@@ -137,7 +144,8 @@ read: false
 Links: [GitHub/source URL] | [Article/Preprint URL]
 Function: 2-sentence summary of the method and tech stack.
 Use Case: the specific analytical problem it solves.
-Usability Note: container availability, conda recipe, issue-check result.
+Usability Note: e.g. "Container available", "Conda recipe", "Experimental — many
+open bugs", "12-month issue check: passed/stale".
 Tags: #tag1 #tag2 #tag3
 
 💡 Methodological Trend (include whenever focus area 10 — emerging & cross-domain
