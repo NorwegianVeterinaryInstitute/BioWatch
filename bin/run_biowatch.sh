@@ -63,7 +63,7 @@ there is no separate file to go read for this.
 Search thoroughly, then write the file to the exact output_file path above."
 
     ts "Launching claude scout..."
-    "$CLAUDE" --allowedTools "WebSearch,Write,Read" -p "$prompt" 2>&1 | tee -a "$LOG"
+    "$CLAUDE" --allowedTools "WebSearch,WebFetch,Write,Read,Glob,mcp__plugin_bio-research_biorxiv__search_preprints,mcp__plugin_bio-research_biorxiv__get_preprint,mcp__plugin_bio-research_biorxiv__search_published_preprints,mcp__plugin_bio-research_pubmed__search_articles,mcp__plugin_bio-research_pubmed__get_article_metadata,mcp__plugin_bio-research_pubmed__find_related_articles,mcp__plugin_bio-research_pubmed__lookup_article_by_citation,mcp__plugin_bio-research_consensus__search" -p "$prompt" 2>&1 | tee -a "$LOG"
     claude_exit=${PIPESTATUS[0]}
 
     if [[ $claude_exit -ne 0 ]]; then

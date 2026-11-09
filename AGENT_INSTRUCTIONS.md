@@ -2,11 +2,35 @@
 
 This is the canonical prompt for the BioWatch scout. It is self-contained: hand it to
 your own agent (Claude, Gemini, or another assistant with web search) to produce a
-report. It does not depend on any tooling specific to Eve's machine.
+report. None of the tools below are required to get a usable result — WebSearch
+alone still works, just weaker (see the note after the tool list) — so this doesn't
+depend on any tooling specific to Eve's machine.
 
-If your agent has access to bioRxiv, PubMed, or similar literature-search MCP tools,
-use them in addition to web search — they give more reliable dates and fewer missed
-releases than web search alone.
+## Tools to use, in priority order
+
+Check which of these you actually have access to in this session — don't assume,
+and don't skip silently if one is missing (see "Tools used this run" in the output
+format below, where you report this).
+
+1. **WebSearch** — baseline, always expected.
+2. **WebFetch** — fetch a page directly (GitHub README/Issues/release pages, a
+   bioRxiv abstract page) instead of relying on search-result snippet text. This is
+   what actually fixes vague/wrong dates — a search snippet can misstate a release
+   date, a fetched page's own metadata usually can't.
+3. **bioRxiv MCP** (`mcp__plugin_bio-research_biorxiv__*`) — structured preprint
+   search and metadata, with a reliable posting date rather than a parsed snippet.
+4. **PubMed MCP** (`mcp__plugin_bio-research_pubmed__*`) — same, for published
+   articles.
+5. **Consensus MCP** (`mcp__plugin_bio-research_consensus__search`) — relevance-
+   ranked semantic search across 400M+ papers (Semantic Scholar/OpenAlex/PubMed).
+   Good for surfacing a relevant methodology paper that plain keyword search misses
+   — this is the closest available equivalent to a Google Scholar-style search;
+   there is no direct Google Scholar API/MCP, and scraping it isn't viable (against
+   its terms, and it breaks constantly), so don't try.
+
+Web search alone (no WebFetch/MCP) is a real but weaker mode — expect to spend more
+Usability Notes flagging unconfirmed dates/licenses, and say so plainly rather than
+guessing.
 
 ## Role
 
@@ -116,6 +140,27 @@ space-separated, exactly as spelled in the vocabulary (case included), e.g.
 `Tags: #amr #nextflow #surveillance-ready`. These are separate from (and usually
 more specific than) the report-level `theme_query`/`tags` in the frontmatter.
 
+## Avoiding duplicates
+
+We want each report to contain **unique findings**, not a repeat of what's already
+been covered.
+
+- **Within this report**: never list the same tool/entry twice, even if it matches
+  more than one focus area — put it where it fits best, and mention the secondary
+  relevance in the Use Case line instead of adding a second entry.
+- **Across cycles** (the more important check for a biweekly scout): before
+  finalizing, use `Glob` to list `automated_findings/*.md`, and `Read` the **2-3
+  most recent** prior reports (by filename date, not all of them — this is a bounded
+  sanity check, not a full history scan). For each candidate tool, if it already
+  appears in one of those, only include it again when there's a genuinely new,
+  significant update (new major version, code/license newly available, etc.) — and
+  if you do include it again, say so explicitly in the Usability Note (e.g. "first
+  covered in [[20261026]] — this entry is for v2.0, not a repeat listing"). If
+  nothing has materially changed, leave it out rather than re-reporting it.
+- For a `specialized` run, this check is lower priority — narrower topics overlap
+  less with recent automated runs — but still worth a quick glance if the topic is
+  close to something covered recently.
+
 ## Sorting
 
 Newest to oldest within each section.
@@ -158,7 +203,10 @@ transferable to veterinary science get surfaced, even from a single tool)
 
 ℹ️ Section B: Informational & Proprietary
 
-**[Tool Name]**: [URL] — brief note (proprietary / web-only / unclear data policy).
+**[Tool Name]** ([URL]) — [proprietary / web-only / unclear data policy]
+Function: 1-2 sentence summary of what it does and why it's relevant — same as
+Section A's Function line, just shorter. Don't skip this: a reader shouldn't have
+to open the link to know whether it's worth opening.
 Tags: #tag1 #tag2
 
 📊 Summary Table
@@ -166,7 +214,24 @@ Tags: #tag1 #tag2
 | Date | Name | Category | Tech Stack | License |
 | :--- | :--- | :--- | :--- | :--- |
 [one row per Section A tool]
+
+🔧 Tools Used This Run
+
+- [✅ or ❌] WebSearch
+- [✅ or ❌] WebFetch
+- [✅ or ❌] bioRxiv MCP
+- [✅ or ❌] PubMed MCP
+- [✅ or ❌] Consensus MCP
+
+[If anything is ❌, one line on why — "not available this session" is enough; don't
+guess at a cause you can't confirm.]
 ```
+
+List every tool from the priority list above, every run, even the ones you didn't
+end up needing — ✅ means you actually used it and got results from it this run, not
+just that it was available. This is what lets Eve see at a glance whether a given
+report ran with full tooling or was WebSearch-only (and therefore weaker on exact
+dates — see "Tools to use" above).
 
 For a `specialized` run, set `theme_query` and `tags` to match the actual narrowed
 topic instead of the standard list above — they drive the searches in
