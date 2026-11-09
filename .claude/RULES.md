@@ -28,9 +28,8 @@ Both sort correctly as plain filenames and avoid DD-MM/MM-DD ambiguity. The agen
 is instructed to pick the right one based on `run_type` — see
 `AGENT_INSTRUCTIONS.md`.
 
-## TASKS.md is for active work only
+## No separate task list
 
-`TASKS.md` holds what's currently in flight — not a growing history. Once an item is
-done, **remove it**, don't leave it checked off. Anything discovered along the way
-that isn't being done right now becomes a GitHub issue instead of a new TASKS.md
-line — that's what keeps the issue tracker the actual backlog, and TASKS.md short.
+There is no `TASKS.md` — the GitHub issue tracker on the NVI repo is the only
+backlog. Anything discovered that isn't being done right now becomes an issue, not a
+line in a file; a closed issue is the done-list.

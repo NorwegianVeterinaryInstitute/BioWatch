@@ -29,7 +29,6 @@ screen them together instead of each person trying to keep up alone.
   truth for what the agent searches and how it formats output; update it here, not in
   a copy elsewhere.
 - `bin/run_biowatch.sh` — the script a scheduler (cron/systemd) calls.
-- `TASKS.md` — running task list for this project.
 
 ## Report format
 

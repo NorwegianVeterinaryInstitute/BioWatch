@@ -22,9 +22,9 @@ and the group reviews/discusses them in a recurring meeting.
   your own agent at it to run a query.
 - `in_vault_queries/` — Dataview queries for browsing/searching reports.
 - `REVIEW_CHECKLIST.md` — track what's been read/discussed.
-- `TASKS.md` — project task list.
-- `bin/run_biowatch.sh` — the scheduled-run script (Eve's machine; see `TASKS.md`
-  for moving this to GitHub Actions so it doesn't depend on one person's laptop).
+- `bin/run_biowatch.sh` — the scheduled-run script (currently Eve's machine; see the
+  [issue tracker](https://github.com/NorwegianVeterinaryInstitute/BioWatch/issues)
+  for moving this to GitHub Actions).
 
 ## Using this as an Obsidian vault
 
