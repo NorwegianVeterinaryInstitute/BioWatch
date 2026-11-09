@@ -8,7 +8,7 @@
 - [ ] Trim `.obsidian/community-plugins.json` to the plugins actually needed
 - [ ] Invite colleagues, confirm they can clone + open as an Obsidian vault
 - [ ] First real biweekly meeting: agree how flagged articles get logged
-      (GitHub issue? a tag in the report? a shared note?)
+      (GitHub issue on the NVI repo? a tag in the report? a shared note?)
 
 ## Later
 

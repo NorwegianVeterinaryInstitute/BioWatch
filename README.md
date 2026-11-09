@@ -44,6 +44,15 @@ See `howto/query-types.md`. Short version: take `AGENT_INSTRUCTIONS.md`, narrow 
 your question, run it with your own agent, save the result into
 `specialized_queries/` with the same frontmatter fields so it's still searchable.
 
+## Issues
+
+- **Colleague-facing issues**: [NorwegianVeterinaryInstitute/BioWatch](https://github.com/NorwegianVeterinaryInstitute/BioWatch) —
+  the canonical, shared repo. Colleagues file issues there.
+- **Eve's own fork** ([evezeyl/BioWatch](https://github.com/evezeyl/BioWatch)) keeps a
+  separate issues list for personal notes/backlog. GitHub does not sync issues
+  between a fork and its upstream — this is by design, not a gap to fix. Anything
+  that should reach colleagues gets filed (or re-filed) on the NVI repo directly.
+
 ## License
 
 Apache 2.0 (see `LICENSE`).
