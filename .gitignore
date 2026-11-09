@@ -10,5 +10,5 @@
 # OS / editor noise
 .DS_Store
 
-# Local Claude Code settings — never shared via this repo
-.claude/
+# Local Claude Code settings only — shared rules live in .claude/RULES.md (tracked)
+.claude/settings.local.json

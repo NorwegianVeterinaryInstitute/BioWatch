@@ -1,5 +1,7 @@
 # BioWatch — repo instructions
 
+@.claude/RULES.md
+
 BioWatch is an Obsidian vault + automation that tracks new bioinformatics methods,
 tools and pipelines on a biweekly cadence, so a small group of bioinformaticians can
 screen them together instead of each person trying to keep up alone.
@@ -43,3 +45,4 @@ don't drop or rename these fields without updating `templates/*.md` to match.
   https://www.conventionalcommits.org/en/v1.0.0/).
 - No backlog carried over from the old prototype repo — BioWatch starts fresh from
   its first real run.
+- See `.claude/RULES.md` for the commit, issue, and task-list workflow.

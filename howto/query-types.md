@@ -19,5 +19,8 @@ colleague) can run one with their own agent:
    — don't drop them).
 4. Give the file a descriptive name, e.g. `2026-11-23_h5n1_methods.md`.
 
+See `howto/specialized-query-example.md` for a worked example — you only write the
+narrowing instructions, not a new prompt from scratch.
+
 Both folders use the same frontmatter schema, so the Dataview queries in
 `templates/` search across both at once.

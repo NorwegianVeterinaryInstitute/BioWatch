@@ -2,6 +2,8 @@
 
 ## 1. Reports by tag (YAML + inline)
 
+> Reports matching a specific combination of tags (edit the `contains(...)` lines).
+
 ```dataview
 TABLE
     dateformat(period_to, "yyyy-MM-dd") as "Date",
@@ -14,6 +16,9 @@ SORT period_to DESC
 ```
 
 ## 2. Inline tags not yet in YAML frontmatter
+
+> Flags reports where someone added a `#tag` in the body that never made it into the
+> frontmatter `tags:` list — a cleanup check, not a search.
 
 ```dataviewjs
 dv.table(["Report", "Inline Tags"],
@@ -30,6 +35,9 @@ dv.table(["Report", "Inline Tags"],
 ```
 
 ## 3. By hashtag combination
+
+> Same idea as #1, but matching Obsidian `#hashtags` directly instead of the YAML
+> `tags:` list — handy for a quick combination like `#amr AND #nextflow`.
 
 ```dataview
 TABLE
