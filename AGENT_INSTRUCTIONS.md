@@ -20,9 +20,43 @@ Focus on the **How** (the tool/method) rather than the **What** (the specific fi
 
 - `period_from` — start of the search window (YYYY-MM-DD)
 - `period_to` — end of the search window (YYYY-MM-DD), usually today
-- `output_file` — exact path to write the report to
+- `run_type` — `automated` or `specialized` (see below)
+- for a `specialized` run only: a short **narrowing instruction** (what this run is
+  specifically about) and a **description** (a few words summing it up, used for the
+  filename and the frontmatter)
 
-## Focus areas (search all of these)
+## Run type, filename, and where the file goes
+
+This determines both the output path and the frontmatter — get it right before
+writing anything.
+
+**`automated`** — the standing run, every **2 weeks** by default, same focus areas
+every time (see below). `bin/run_biowatch.sh` enforces the cadence; see
+`.claude/RULES.md` for the naming convention this implements.
+- Directory: `automated_findings/`
+- Filename: `<period_to as YYYYMMDD>.md` — ISO 8601 **basic** format, no separators
+  (e.g. `20261123.md`). One file per cycle; if it already exists, stop — don't
+  overwrite it.
+- `description` frontmatter field: `"Biweekly automated scan — standard focus areas"`
+
+**`specialized`** — a one-off, narrower run on a specific question (see
+`howto/agent-query-types.md` and `howto/specialized-query-example.md`).
+- Directory: `specialized_findings/`
+- Filename: `<period_to as YYYY-MM-DD>_<short-slug>.md` — ISO 8601 **extended**
+  format (with dashes) plus a lowercase, hyphen-separated slug describing the topic
+  (e.g. `2026-11-23_h5n1_methods.md`). The slug comes from the narrowing instruction
+  you were given — keep it to 2-4 words.
+- `description` frontmatter field: a one-line, human-readable restatement of the
+  narrowing instruction (e.g. `"Long-read assembly tools for oomycetes, last 4
+  weeks"`) — this is what shows up in `in_vault_queries/` tables, so make it mean
+  something on its own, out of context.
+
+Never write a `specialized` run into `automated_findings/`, or vice versa.
+
+## Focus areas (search all of these — `automated` runs only)
+
+A `specialized` run uses its own narrowing instruction instead of this list, unless
+told to keep some of these areas in scope too.
 
 1. **Disease X & Unknown Pathogens** — unbiased metagenomic detection, host-depletion
    techniques, "dark matter" analysis (viral/bacterial signal with no close relatives
@@ -67,11 +101,13 @@ do not wrap it in a code fence:
 ```
 ---
 report: Bioinformatics Method Scout
+run_type: <automated or specialized>
+description: <see "description frontmatter field" above — fill per run_type>
 date_search: <period_to>
 period_from: <period_from>
 period_to: <period_to>
 theme_query: Pathogen Discovery, pLMs, Metagenomics, Assembly, Evolution, Comparative Genomics, AMR
-full_query: "BioWatch automated query <period_from> to <period_to>"
+full_query: "BioWatch <automated|specialized> query <period_from> to <period_to>"
 tags: [bioinformatics, pathogen_discovery, pLMs, metagenomics, AMR]
 read: false
 ---
@@ -99,9 +135,14 @@ Usability Note: container availability, conda recipe, issue-check result.
 [one row per Section A tool]
 ```
 
-The `tags`, `period_from`, `period_to`, `date_search` and `read` frontmatter fields
-are load-bearing — they're what the Obsidian Dataview queries in `in_vault_queries/` use to
-build the searchable index. Keep them even if you adapt the prompt.
+For a `specialized` run, set `theme_query` and `tags` to match the actual narrowed
+topic instead of the standard list above — they drive the searches in
+`in_vault_queries/`, so they should reflect what this run is really about.
+
+The `run_type`, `description`, `tags`, `period_from`, `period_to`, `date_search` and
+`read` frontmatter fields are load-bearing — they're what the Obsidian Dataview
+queries in `in_vault_queries/` use to build the searchable index. Keep them even if
+you adapt the prompt.
 
 If more than 20 qualifying results exist, add a closing note: "Note: [X] additional
 tools found. Ask to expand."

@@ -64,6 +64,7 @@ ts "Output: $OUTPUT_FILE"
 PROMPT="$(cat "$INSTRUCTIONS")
 
 ## This run
+- run_type: automated
 - period_from: $PERIOD_FROM
 - period_to: $PERIOD_TO
 - output_file: $OUTPUT_FILE

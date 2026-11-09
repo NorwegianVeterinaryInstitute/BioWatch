@@ -28,6 +28,9 @@ and the group reviews/discusses them in a recurring meeting.
 
 ## Using this as an Obsidian vault
 
+Built and tested with **Obsidian 1.15.0**. If you're on an older version and a
+plugin fails to load, update Obsidian first before troubleshooting further.
+
 1. Clone this repo.
 2. Open the cloned folder as a vault in Obsidian (not inside another vault — keep it
    standalone).
@@ -45,7 +48,8 @@ and the group reviews/discusses them in a recurring meeting.
    Plugin binaries aren't committed to this repo — install them fresh, works the
    same on any OS.
 4. Browse `in_vault_queries/` for ready-made searches, or write your own Dataview query
-   against `automated_findings/`/`specialized_findings/`.
+   against `automated_findings/`/`specialized_findings/`. New to Dataview or how we
+   use tags? See `howto/in-vault-queries-dataview-basics.md`.
 
 ## Contributing a specialized query
 

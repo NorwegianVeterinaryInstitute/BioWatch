@@ -16,6 +16,18 @@ Every commit follows [Conventional Commits 1.0.0](https://www.conventionalcommit
   ([NorwegianVeterinaryInstitute/BioWatch](https://github.com/NorwegianVeterinaryInstitute/BioWatch)).
   Eve's own fork issues are personal notes, not synced (see `README.md`).
 
+## Naming convention for findings — enforced in AGENT_INSTRUCTIONS.md
+
+- `automated_findings/<period_to as YYYYMMDD>.md` — ISO 8601 **basic** format, no
+  separators (e.g. `20261123.md`).
+- `specialized_findings/<period_to as YYYY-MM-DD>_<short-slug>.md` — ISO 8601
+  **extended** format (with dashes) plus a lowercase, hyphen-separated slug
+  (e.g. `2026-11-23_h5n1_methods.md`).
+
+Both sort correctly as plain filenames and avoid DD-MM/MM-DD ambiguity. The agent
+is instructed to pick the right one based on `run_type` — see
+`AGENT_INSTRUCTIONS.md`.
+
 ## TASKS.md is for active work only
 
 `TASKS.md` holds what's currently in flight — not a growing history. Once an item is
