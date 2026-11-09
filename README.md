@@ -32,9 +32,18 @@ and the group reviews/discusses them in a recurring meeting.
 2. Open the cloned folder as a vault in Obsidian (not inside another vault — keep it
    standalone).
 3. Install these community plugins (Settings → Community plugins → Browse), matching
-   `.obsidian/community-plugins.json`: **Dataview**, **Tag Folder**, **Colored Tags**,
-   **Table Editor**. Plugin binaries aren't committed to this repo — install them
-   fresh, works the same on any OS.
+   `.obsidian/community-plugins.json`. Several plugins share similar names, so check
+   the author shown in the browser to get the right one:
+
+   | Plugin | Plugin ID | Author |
+   | :--- | :--- | :--- |
+   | Dataview | `dataview` | Michael Brenan (blacksmithgu) |
+   | Tag Folder | `obsidian-tagfolder` | check author shown in-app — do not confuse with a similarly-named plugin |
+   | Colored Tags | `colored-tags` | check author shown in-app — do not confuse with a similarly-named plugin |
+   | Advanced Tables | `table-editor-obsidian` | Tony Grosinger (tgrosinger) — plugin ID still says "table-editor-obsidian" from an earlier name; **not** the separate "Markdown Table Editor" plugin |
+
+   Plugin binaries aren't committed to this repo — install them fresh, works the
+   same on any OS.
 4. Browse `templates/` for ready-made searches, or write your own Dataview query
    against `standard_queries/`/`specialized_queries/`.
 
