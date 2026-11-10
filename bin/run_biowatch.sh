@@ -85,6 +85,41 @@ Search thoroughly, then write the file to the exact output_file path above."
     else
         ts "Checklist row already present for $filename"
     fi
+
+    commit_and_push "$filename" || return 1
+}
+
+# Commits the new report + checklist row and pushes to both remotes, so the
+# vault stays current without anyone running git by hand (issue #2). The
+# commit happens even if a later push fails, so nothing generated is lost —
+# a failed push just gets retried (ordinary `git push`) on the next run.
+commit_and_push() {
+    local filename="$1"
+    cd "$REPO_DIR"
+
+    git add "$OUTPUT_DIR/$filename" "$CHECKLIST"
+    if git diff --cached --quiet; then
+        ts "Nothing to commit for $filename"
+        return 0
+    fi
+
+    if ! git commit -m "docs(findings): add automated report ending ${filename%.md}
+
+Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>" >> "$LOG" 2>&1; then
+        ts "ERROR: git commit failed for $filename"
+        return 1
+    fi
+    ts "Committed $filename"
+
+    if ! git push origin main >> "$LOG" 2>&1; then
+        ts "ERROR: push to origin failed"
+        return 1
+    fi
+    if ! git push upstream main >> "$LOG" 2>&1; then
+        ts "ERROR: push to upstream failed"
+        return 1
+    fi
+    ts "Pushed to origin and upstream"
 }
 
 ts "=== BioWatch scout starting ==="
